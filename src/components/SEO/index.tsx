@@ -1,11 +1,11 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const SEO: React.FC = () => {
   return (
     <Head>
       {/* google indexing data */}
 
-      <title>Space 2022</title>
+      <title>Space 2023</title>
       <meta name="description" content="ACM at UCSD's Annual Career Fair" />
       <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -20,10 +20,7 @@ const SEO: React.FC = () => {
       {/* title to display for the specific link being shared */}
       <meta property="og:title" content="SPACE 2022" />
       {/* preview description text */}
-      <meta
-        property="og:description"
-        content="ACM at UCSD's Annual Career Fair"
-      />
+      <meta property="og:description" content="ACM at UCSD's Annual Career Fair" />
 
       {/* <meta property="twitter:card" content="summary" />
      <meta property="twitter:creator" content={config.social.twitter} />
