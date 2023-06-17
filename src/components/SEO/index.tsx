@@ -16,9 +16,9 @@ const SEO: React.FC = () => {
       {/* type of content */}
       <meta property="og:type" content="website" />
       {/* actual website title */}
-      <meta property="og:site_name" content="Space 2022" />
+      <meta property="og:site_name" content="Space 2023" />
       {/* title to display for the specific link being shared */}
-      <meta property="og:title" content="SPACE 2022" />
+      <meta property="og:title" content="SPACE 2023" />
       {/* preview description text */}
       <meta property="og:description" content="ACM at UCSD's Annual Career Fair" />
 
