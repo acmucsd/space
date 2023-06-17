@@ -16,7 +16,7 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const pages = ['Registration', 'About', 'FAQ', 'Companies'];
+const pages = ['About', 'FAQ', 'Companies', 'Registration'];
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -49,14 +49,14 @@ const Navbar: React.FC = () => {
 
   const handleDesktopRedirect = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     const input = e.target as HTMLElement;
-    if (input.innerText === 'Registration') {
-      router.push('/');
-    } else if (input.innerText === 'About') {
+    if (input.innerText === 'About') {
       router.push('/#about');
     } else if (input.innerText === 'FAQ') {
       router.push('/#faq');
     } else if (input.innerText === 'Companies') {
       router.push('/#companies');
+    } else if (input.innerText === 'Registration') {
+      window.open('https://acmurl.com/space-registration', '_blank', 'noopener,noreferrer');
     }
   };
 
