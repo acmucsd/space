@@ -1,0 +1,14 @@
+.ship {
+  margin: 0.75rem;
+}
+
+.sections {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) {
+  .shipDialog {
+    margin: 0.75rem;
+  }
+}

@@ -1,9 +1,11 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
+import s from './style.module.scss';
 
 const StarCanvas: React.FC = () => {
   return (
     <Particles
+      className={s.particles}
       init={async (main: any) => await loadFull(main)}
       options={{
         particles: {
@@ -15,19 +17,19 @@ const StarCanvas: React.FC = () => {
             },
           },
           color: {
-            value: "#ffffff",
+            value: '#ffffff',
           },
           shape: {
-            type: "circle",
+            type: 'circle',
             stroke: {
               width: 0,
-              color: "#000000",
+              color: '#000000',
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
-              src: "img/github.svg",
+              src: 'img/github.svg',
               width: 100,
               height: 100,
             },
@@ -55,17 +57,17 @@ const StarCanvas: React.FC = () => {
           line_linked: {
             enable: false,
             distance: 150,
-            color: "#ffffff",
+            color: '#ffffff',
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
             speed: 0.2,
-            direction: "none",
+            direction: 'none',
             random: true,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             bounce: false,
             attract: {
               enable: false,
