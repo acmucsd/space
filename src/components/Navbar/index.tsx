@@ -14,13 +14,8 @@ import {
   ThemeProvider,
 } from '@mui/material';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-const pages = ['About', 'FAQ', 'Companies', 'Registration'];
 
 const Navbar: React.FC = () => {
-  const router = useRouter();
-
   const theme = createTheme({
     palette: {
       primary: {
