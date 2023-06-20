@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
   };
 
   const handleMobileRedirect = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    setMobileOpen(false);
+    handleMobileClose();
     handleDesktopRedirect(e);
   };
 
@@ -109,7 +109,9 @@ const Navbar: React.FC = () => {
           <AppBar color="secondary" sx={{ boxShadow: 'none' }}>
             <Container maxWidth="xl">
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <img src="asset/nav_spaceship.svg" className={s.ship} />
+                <Link href="/">
+                  <img src="asset/nav_spaceship.svg" className={s.ship} />
+                </Link>
                 <IconButton
                   size="large"
                   edge="start"
@@ -134,7 +136,9 @@ const Navbar: React.FC = () => {
             }}
           >
             <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-              <img src="asset/nav_spaceship.svg" className={s.shipDialog} />
+              <Link href="/" onClick={handleMobileClose}>
+                <img src="asset/nav_spaceship.svg" className={s.ship} />
+              </Link>
               <IconButton edge="start" color="primary" onClick={handleMobileClose} aria-label="close">
                 <CloseIcon />
               </IconButton>
