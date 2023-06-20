@@ -42,24 +42,6 @@ const Navbar: React.FC = () => {
     setMobileOpen(false);
   };
 
-  const handleMobileRedirect = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    handleMobileClose();
-    handleDesktopRedirect(e);
-  };
-
-  const handleDesktopRedirect = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const input = e.target as HTMLElement;
-    if (input.innerText === 'About') {
-      router.push('/#about');
-    } else if (input.innerText === 'FAQ') {
-      router.push('/#faq');
-    } else if (input.innerText === 'Companies') {
-      router.push('/#companies');
-    } else if (input.innerText === 'Registration') {
-      window.open('https://acmurl.com/space-registration', '_blank', 'noopener,noreferrer');
-    }
-  };
-
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -79,22 +61,19 @@ const Navbar: React.FC = () => {
                 <Link href="/">
                   <img src="asset/nav_spaceship.svg" className={s.ship} />
                 </Link>
-                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                  {pages.map((page, index) => {
-                    return (
-                      <MenuItem
-                        sx={{
-                          color: 'white',
-                          marginRight: index == pages.length - 1 ? 3 : 2,
-                        }}
-                        onClick={handleDesktopRedirect}
-                        key={index}
-                        className={s.sections}
-                      >
-                        {page}
-                      </MenuItem>
-                    );
-                  })}
+                <Box sx={{ display: 'flex', flexDirection: 'row', paddingRight: '8px' }}>
+                  <Link href="/#about" className={s.navItem}>
+                    About
+                  </Link>
+                  <Link href="/#faq" className={s.navItem}>
+                    FAQ
+                  </Link>
+                  <Link href="/#companies" className={s.navItem}>
+                    Companies
+                  </Link>
+                  <Link href="https://acmurl.com/space-registration" className={s.navItem} target="_blank">
+                    Registration
+                  </Link>
                 </Box>
               </Box>
             </Container>
@@ -143,11 +122,23 @@ const Navbar: React.FC = () => {
                 <CloseIcon />
               </IconButton>
             </Toolbar>
-            {pages.map((page, index) => (
-              <MenuItem onClick={handleMobileRedirect} sx={{ color: 'white', ml: 'auto', mr: 'auto' }} key={index}>
-                {page}
-              </MenuItem>
-            ))}
+            <Link href="/#about" className={s.navItem} onClick={handleMobileClose}>
+              About
+            </Link>
+            <Link href="/#faq" className={s.navItem} onClick={handleMobileClose}>
+              FAQ
+            </Link>
+            <Link href="/#companies" className={s.navItem} onClick={handleMobileClose}>
+              Companies
+            </Link>
+            <Link
+              href="https://acmurl.com/space-registration"
+              className={s.navItem}
+              onClick={handleMobileClose}
+              target="_blank"
+            >
+              Registration
+            </Link>
           </Dialog>
         </ThemeProvider>
       </nav>

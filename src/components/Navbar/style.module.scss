@@ -2,6 +2,20 @@
   margin: 0.75rem;
 }
 
+.navItem {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+.navItem:hover {
+  font-weight: bolder;
+}
+
 .sections {
   font-family: 'Rubik', sans-serif;
   font-weight: bolder;
@@ -10,5 +24,10 @@
 @media only screen and (max-width: 768px) {
   .shipDialog {
     margin: 0.75rem;
+  }
+
+  .navItem {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 }
