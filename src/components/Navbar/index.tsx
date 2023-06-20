@@ -15,6 +15,26 @@ import {
 } from '@mui/material';
 import Link from 'next/link';
 
+const pages = [
+  {
+    name: 'About',
+    link: '/#about',
+  },
+  {
+    name: 'FAQ',
+    link: '/#faq',
+  },
+  {
+    name: 'Companies',
+    link: '/#companies',
+  },
+  {
+    name: 'Registration',
+    link: 'https://acmurl.com/space-registration',
+    externalLink: true,
+  },
+];
+
 const Navbar: React.FC = () => {
   const theme = createTheme({
     palette: {
@@ -57,18 +77,16 @@ const Navbar: React.FC = () => {
                   <img src="asset/nav_spaceship.svg" className={s.ship} />
                 </Link>
                 <Box sx={{ display: 'flex', flexDirection: 'row', paddingRight: '8px' }}>
-                  <Link href="/#about" className={s.navItem}>
-                    About
-                  </Link>
-                  <Link href="/#faq" className={s.navItem}>
-                    FAQ
-                  </Link>
-                  <Link href="/#companies" className={s.navItem}>
-                    Companies
-                  </Link>
-                  <Link href="https://acmurl.com/space-registration" className={s.navItem} target="_blank">
-                    Registration
-                  </Link>
+                  {pages.map((page, index) => (
+                    <Link
+                      href={page.link}
+                      className={s.navItem}
+                      target={page.externalLink ? '_blank' : undefined}
+                      key={index}
+                    >
+                      {page.name}
+                    </Link>
+                  ))}
                 </Box>
               </Box>
             </Container>
@@ -117,23 +135,17 @@ const Navbar: React.FC = () => {
                 <CloseIcon />
               </IconButton>
             </Toolbar>
-            <Link href="/#about" className={s.navItem} onClick={handleMobileClose}>
-              About
-            </Link>
-            <Link href="/#faq" className={s.navItem} onClick={handleMobileClose}>
-              FAQ
-            </Link>
-            <Link href="/#companies" className={s.navItem} onClick={handleMobileClose}>
-              Companies
-            </Link>
-            <Link
-              href="https://acmurl.com/space-registration"
-              className={s.navItem}
-              onClick={handleMobileClose}
-              target="_blank"
-            >
-              Registration
-            </Link>
+            {pages.map((page, index) => (
+              <Link
+                href={page.link}
+                className={s.navItem}
+                target={page.externalLink ? '_blank' : undefined}
+                key={index}
+                onClick={handleMobileClose}
+              >
+                {page.name}
+              </Link>
+            ))}
           </Dialog>
         </ThemeProvider>
       </nav>
