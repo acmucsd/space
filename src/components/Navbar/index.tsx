@@ -2,17 +2,7 @@ import { useEffect, useState } from 'react';
 import s from './style.module.scss';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import {
-  AppBar,
-  Container,
-  Box,
-  MenuItem,
-  IconButton,
-  Dialog,
-  Toolbar,
-  createTheme,
-  ThemeProvider,
-} from '@mui/material';
+import { AppBar, Container, Box, IconButton, Dialog, Toolbar, createTheme, ThemeProvider } from '@mui/material';
 import Link from 'next/link';
 
 const pages = [
@@ -71,7 +61,7 @@ const Navbar: React.FC = () => {
       <nav>
         <ThemeProvider theme={theme}>
           <AppBar color="secondary" sx={{ boxShadow: 'none' }}>
-            <Container maxWidth="xl">
+            <Container maxWidth={false}>
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Link href="/">
                   <img src="asset/nav_spaceship.svg" className={s.ship} />
@@ -99,7 +89,7 @@ const Navbar: React.FC = () => {
       <nav>
         <ThemeProvider theme={theme}>
           <AppBar color="secondary" sx={{ boxShadow: 'none' }}>
-            <Container maxWidth="xl">
+            <Container maxWidth={false}>
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Link href="/">
                   <img src="asset/nav_spaceship.svg" className={s.ship} />
