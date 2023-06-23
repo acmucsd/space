@@ -1,4 +1,4 @@
-@use "src/styles/vars.scss" as vars;
+@use 'src/styles/vars.scss' as vars;
 
 .container {
   background: linear-gradient(180deg, vars.$pink 0%, vars.$blue 95%);
@@ -7,6 +7,6 @@
 
   .content {
     position: relative;
-    z-index: 9999;
+    z-index: 100;
   }
 }

@@ -3,7 +3,7 @@ import s from './style.module.scss';
 
 const Companies: React.FC = () => {
   return (
-    <section className={s.container}>
+    <section className={s.container} id="companies">
       <h1>Participating Companies (2022)</h1>
       <CompaniesGrid />
     </section>
