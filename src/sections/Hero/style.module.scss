@@ -1,4 +1,4 @@
-@use "src/styles/vars.scss" as vars;
+@use 'src/styles/vars.scss' as vars;
 
 .heroContainer {
   background-image: linear-gradient(180deg, vars.$blue 15%, vars.$pink 98%);
@@ -7,6 +7,7 @@
 
   .heroTitle {
     position: absolute;
+    width: 100%;
     top: 18%;
     z-index: 1;
   }
@@ -40,6 +41,7 @@
     margin-top: 11vw;
     padding: 0 2rem;
     z-index: 2;
+    text-shadow: 0 0 4px vars.$black;
 
     .heroSubtitle {
       line-height: 100%;

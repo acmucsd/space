@@ -1,7 +1,9 @@
-@use "src/styles/vars.scss" as vars;
+@use 'src/styles/vars.scss' as vars;
 
 .container {
   display: grid;
+  max-width: 1440px;
+  margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   margin-top: 4rem;
   row-gap: 1.7rem;
