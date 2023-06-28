@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Register Today!
+              Student Registration
             </a>
           </div>
         </div>
