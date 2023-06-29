@@ -35,13 +35,22 @@ const Hero: React.FC = () => {
           <div className={s.heroInfo}>
             <div>Price Center West Ballroom</div>
             <div>October 17th, 2023 (10am to 4pm)</div>
+            <div className={s.heroSubtitle}>Register Today!</div>
             <a
               className={s.registerButton}
               href="https://acmurl.com/space-registration"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Student Registration
+              Students
+            </a>
+            <a
+              className={s.registerButton}
+              href="https://acmurl.com/space-company-registration"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Companies
             </a>
           </div>
         </div>

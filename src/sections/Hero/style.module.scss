@@ -8,7 +8,7 @@
   .heroTitle {
     position: absolute;
     width: 100%;
-    top: 18%;
+    top: 15%;
     z-index: 1;
   }
 
@@ -38,18 +38,10 @@
     position: absolute;
     height: 100vh;
     width: 100vw;
-    margin-top: 11vw;
+    margin-top: 14vw;
     padding: 0 2rem;
     z-index: 2;
     text-shadow: 0 0 4px vars.$black;
-
-    .heroSubtitle {
-      line-height: 100%;
-      margin-top: 6rem;
-      color: vars.$white;
-      font-size: 40px;
-      font-weight: bolder;
-    }
 
     .heroInfo {
       color: vars.$white;
@@ -58,7 +50,7 @@
 
     .heroSubtitle {
       line-height: 100%;
-      margin-top: 5vw;
+      margin-top: max(2rem, 2vw);
       color: vars.$white;
       font-size: 40px;
       font-weight: bolder;
@@ -80,6 +72,8 @@
     border-radius: 9.86667px;
     display: inline-block;
     margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     font-size: 1.5rem;
     transition: 0.3s ease;
 
