@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
             <Container maxWidth={false}>
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Link href="/">
-                  <img src="asset/nav_spaceship.svg" className={s.ship} />
+                  <img src="asset/nav_logo.svg" className={s.ship} />
                 </Link>
                 <Box sx={{ display: 'flex', flexDirection: 'row', paddingRight: '8px' }}>
                   {pages.map((page, index) => (
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
             <Container maxWidth={false}>
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Link href="/">
-                  <img src="asset/nav_spaceship.svg" className={s.ship} />
+                  <img src="asset/nav_logo.svg" className={s.ship} />
                 </Link>
                 <IconButton
                   size="large"
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
           >
             <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               <Link href="/" onClick={handleMobileClose}>
-                <img src="asset/nav_spaceship.svg" className={s.ship} />
+                <img src="asset/nav_logo.svg" className={s.ship} />
               </Link>
               <IconButton edge="start" color="primary" onClick={handleMobileClose} aria-label="close">
                 <CloseIcon />
