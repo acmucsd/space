@@ -2,7 +2,7 @@ import s from "./style.module.scss";
 
 const statistics = [
   { label: "Students", value: "250+" },
-  { label: "Companies", value: 8 },
+  { label: "Companies", value: 3 },
 ];
 
 const StatisticsGrid: React.FC = () => {

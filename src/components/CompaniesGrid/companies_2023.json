@@ -1,0 +1,20 @@
+[
+    {
+        "name": "F5",
+        "logo": "asset/f5_logo.svg",
+        "link": "https://www.f5.com/",
+        "alt": "F5 Company Sponsor Logo"
+    },
+    {
+        "name": "LPL Financial",
+        "logo": "asset/lpl.png",
+        "link": "https://www.lpl.com/",
+        "alt": "LPL Financial Company Sponsor Logo"
+    },
+    {
+        "name": "ServiceNow",
+        "logo": "asset/servicenow_logo.png",
+        "link": "https://www.servicenow.com/",
+        "alt": "ServiceNow Company Sponsor Logo"
+    }
+]
