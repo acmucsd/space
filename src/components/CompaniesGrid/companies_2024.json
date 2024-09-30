@@ -1,0 +1,20 @@
+[
+    {
+        "name": "LPL Financial",
+        "logo": "asset/lpl-logo.svg",
+        "link": "https://www.lpl.com/",
+        "alt": "LPL Financial Company Sponsor Logo"
+    },
+    {
+        "name": "SDGE",
+        "logo": "asset/sdge_logo.svg",
+        "link": "https://www.sdge.com/",
+        "alt": "SDGE Company Sponsor Logo"
+    },
+    {
+        "name": "Lockheed Martin",
+        "logo": "asset/lockheed_logo.svg",
+        "link": "https://www.lockheedmartin.com/",
+        "alt": "Lockheed Martin Company Sponsor Logo"
+    }
+]

@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
           <div className={s.heroSubtitle}>ACM at UCSD&apos;s Annual Career Fair</div>
           <div className={s.heroInfo}>
             <div>Price Center West Ballroom</div>
-            <div>October 17th, 2023 (10am to 4pm)</div>
+            <div>October 14th, 2024 (10am to 4pm)</div>
             <div className={s.heroSubtitle}>Register Today!</div>
             <a
               className={s.registerButton}
