@@ -1,5 +1,5 @@
 import s from "./style.module.scss";
-import companies from "./companies_2023.json"
+import companies from "./companies_2024.json"
 
 const CompaniesGrid: React.FC = () => {
   return (
