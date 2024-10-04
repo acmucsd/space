@@ -4,7 +4,7 @@ const Hero: React.FC = () => {
   return (
     <>
       <div className={s.heroContainer}>
-        <img src="asset/hero_title.png" alt="hero" className={s.heroTitle} />
+        <img src="asset/hero_title.svg" alt="SPACE" className={s.heroTitle} />
         <svg
           width="413"
           height="528"
