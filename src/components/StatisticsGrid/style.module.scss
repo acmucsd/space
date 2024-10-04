@@ -1,3 +1,5 @@
+@use 'src/styles/vars.scss' as vars;
+
 .container {
   color: #f0f0f0;
   display: grid;
@@ -8,6 +10,7 @@
     border-left: 8px solid #f0f0f0;
     padding-left: 25px;
     padding-top: 15px;
+    text-shadow: 0 1.5px 1.5px vars.$black;
     width: 210px;
     > h1 {
       font-size: 70px;

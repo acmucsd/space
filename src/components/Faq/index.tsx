@@ -29,12 +29,12 @@ const Faq: React.FC<panelData> = ({ data }) => {
               boxShadow: 'none',
             }} key = {questionObject.question}>
               <AccordionSummary expandIcon={<ExpandMoreIcon className = {s.header}/>}>
-                <Typography sx = {{ fontSize: 20, fontWeight: 'bold'}}>
+                <Typography sx = {{ fontSize: 20 }}>
                   {questionObject.question}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className = {s.description}>
-                <Typography component="div" sx = {{ fontSize: 20, fontWeight: 'bold'}}>
+                <Typography component="div" sx = {{ fontSize: 20 }}>
                   <div>{questionObject.answer}</div>
                 </Typography>
               </AccordionDetails>
