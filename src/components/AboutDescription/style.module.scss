@@ -1,13 +1,16 @@
+@use 'src/styles/vars.scss' as vars;
+
 .container {
   color: #f0f0f0;
   margin-top: 25px;
   margin: 2rem;
+  text-shadow: 0 1.5px 1.5px vars.$black;
 
   .header {
     font-family: 'Rubik', sans-serif;
     font-weight: 600;
     font-size: 70px;
-    color: #ff8181;
+    color: #dbc9ff;
     line-height: 90px;
     letter-spacing: 2px;
   }
