@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
         main: '#FFFFFF',
       },
       secondary: {
-        main: '#110f47',
+        main: '#053561',
       },
     },
   });
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             onClose={handleMobileClose}
             PaperProps={{
               style: {
-                backgroundColor: '#110F47',
+                backgroundColor: '#053561',
               },
             }}
           >
