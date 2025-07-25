@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Qualcomm Conference Center, Jacob's Hall 1st Floor
+                Qualcomm Conference Center, Jacob&apos;s Hall 1st Floor
               </a>
             </div>
             <div>October 17th, 2025 (10am to 4pm)</div>
