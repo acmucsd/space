@@ -1,0 +1,14 @@
+[
+  {
+    "name": "LPL Financial",
+    "logo": "asset/lpl-logo.svg",
+    "link": "https://www.lpl.com/",
+    "alt": "LPL Financial Company Sponsor Logo"
+  },
+  {
+    "name": "Jane Street",
+    "logo": "asset/JaneStreet_logo.svg",
+    "link": "https://www.janestreet.com/",
+    "alt": "Jane Street Company Sponsor Logo"
+  }
+]
