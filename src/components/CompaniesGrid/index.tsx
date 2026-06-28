@@ -1,5 +1,5 @@
 import s from "./style.module.scss";
-import companies from "./companies_2025.json"; // change to 2026 later
+import companies from "./companies_2026.json"; // change to 2026 later
 
 const CompaniesGrid: React.FC = () => {
   return (
