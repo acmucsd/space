@@ -40,10 +40,10 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Qualcomm Conference Center, Jacob&apos;s Hall 1st Floor
+                Price Center East Ballroom
               </a>
             </div>
-            <div>October 17th, 2025 (10am to 4pm)</div>
+            <div>October 19th, 2026 (10am to 4pm)</div>
             <div className={s.heroSubtitle}>Register Today!</div>
             <a
               className={s.registerButton}
