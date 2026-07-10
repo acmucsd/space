@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Hero />
       <About />
       <FAQ />
-      <Companies />
+      {/*<Companies />*/}
     </main>
   );
 };
