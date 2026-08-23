@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import s from './style.module.scss';
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Container, Box, IconButton, Dialog, Toolbar, createTheme, ThemeProvider } from '@mui/material';
+import { Dialog } from '@mui/material';
 import Link from 'next/link';
 
 const pages = [
@@ -11,32 +9,21 @@ const pages = [
     link: '/#about',
   },
   {
+    name: 'Registration',
+    link: 'https://acmurl.com/space-registration',
+  },
+  {
     name: 'FAQ',
     link: '/#faq',
   },
   {
     name: 'Companies',
     link: '/#companies',
-  },
-  {
-    name: 'Registration',
-    link: 'https://acmurl.com/space-registration',
     externalLink: true,
   },
 ];
 
 const Navbar: React.FC = () => {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#FFFFFF',
-      },
-      secondary: {
-        main: '#053561',
-      },
-    },
-  });
-
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleMobileOpen = () => {
@@ -56,75 +43,87 @@ const Navbar: React.FC = () => {
     });
   }, []);
 
-  if (width > 768) {
+  const navWrapperRef = useRef<HTMLElement>(null);
+  const navBarRef = useRef<HTMLDivElement>(null);
+  const [navScale, setNavScale] = useState(1);
+
+  // when the mid svg reaches minimum size, then we start scaling the whole bar down
+  useEffect(() => {
+    const updateScale = () => {
+      if (!navWrapperRef.current || !navBarRef.current) return;
+      const wrapperStyle = window.getComputedStyle(navWrapperRef.current);
+      const paddingLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(wrapperStyle.paddingRight) || 0;
+      const availableWidth = navWrapperRef.current.clientWidth - paddingLeft - paddingRight;
+      const naturalWidth = navBarRef.current.offsetWidth;
+      setNavScale(naturalWidth > 0 ? Math.min(1, availableWidth / naturalWidth) : 1);
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, [width]);
+
+  if (width > 768) { // desktop
     return (
-      <nav>
-        <ThemeProvider theme={theme}>
-          <AppBar color="secondary" sx={{ boxShadow: 'none' }}>
-            <Container maxWidth={false}>
-              <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Link href="/">
-                  <img src="asset/nav_logo.svg" className={s.ship} />
-                </Link>
-                <Box sx={{ display: 'flex', flexDirection: 'row', paddingRight: '8px' }}>
-                  {pages.map((page, index) => (
-                    <Link
-                      href={page.link}
-                      className={s.navItem}
-                      target={page.externalLink ? '_blank' : undefined}
-                      key={index}
-                    >
-                      {page.name}
-                    </Link>
-                  ))}
-                </Box>
-              </Box>
-            </Container>
-          </AppBar>
-        </ThemeProvider>
-      </nav>
-    );
-  } else {
-    return (
-      <nav>
-        <ThemeProvider theme={theme}>
-          <AppBar color="secondary" sx={{ boxShadow: 'none' }}>
-            <Container maxWidth={false}>
-              <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Link href="/">
-                  <img src="asset/nav_logo.svg" className={s.ship} />
-                </Link>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="primary"
-                  aria-label="open drawer"
-                  sx={{ mr: 2 }}
-                  onClick={handleMobileOpen}
+      <>
+        <div className={s.topVignette} aria-hidden="true" />
+        <nav className={s.navWrapper} ref={navWrapperRef} style={{ overflow: "hidden" }}>
+          <div className={s.navBar} ref={navBarRef} style={{ transform: navScale < 1 ? `scale(${navScale})` : undefined }}>
+            <Link href="https://acmucsd.com/" className={`${s.navCap} ${s.navCapLeft}`}>
+              <img src="/asset/nav_logo.svg" className={s.ship} alt="acm" />
+            </Link>
+            <div className={s.navMiddle}>
+              <img src="/asset/navbar/nav_mid.svg" className={s.navMiddleBg} alt="" aria-hidden="true" />
+              {pages.map((page, index) => (
+                <Link
+                  href={page.link}
+                  className={s.navItem}
+                  target={page.externalLink ? '_blank' : undefined}
+                  key={index}
                 >
-                  <MenuIcon />
-                </IconButton>
-              </Box>
-            </Container>
-          </AppBar>
-          <Dialog
-            fullScreen
-            open={mobileOpen}
-            onClose={handleMobileClose}
-            PaperProps={{
-              style: {
-                backgroundColor: '#053561',
-              },
-            }}
+                  {page.name}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="https://acmurl.com/space-registration"
+              target="_blank"
+              className={`${s.navCap} ${s.navCapRight}`}
+            >
+              <span className={s.registerBtn}>Register Today!</span>
+            </Link>
+          </div>
+        </nav>
+      </>
+    );
+  } else { // mobile
+    return (
+      <>
+        <div className={s.topVignette} aria-hidden="true" />
+        <nav className={s.mobileNavWrapper}>
+          <button type="button" className={s.mobileMenuButton} onClick={handleMobileOpen} aria-label="Open menu">
+            <img src="/asset/menu_icon_mobile.svg" alt="" aria-hidden="true" />
+          </button>
+          <Link href="https://acmucsd.com/" className={s.mobileLogo}>
+            <img src="/asset/nav_logo.svg" alt="acm" />
+          </Link>
+        </nav>
+        <Dialog
+          open={mobileOpen}
+          onClose={handleMobileClose}
+          PaperProps={{ className: s.mobileMenuPaper }}
+          componentsProps={{ backdrop: { className: s.mobileMenuBackdrop } }}
+        >
+          <button
+            type="button"
+            className={s.mobileMenuClose}
+            onClick={handleMobileClose}
+            aria-label="Close menu"
           >
-            <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Link href="/" onClick={handleMobileClose}>
-                <img src="asset/nav_logo.svg" className={s.ship} />
-              </Link>
-              <IconButton edge="start" color="primary" onClick={handleMobileClose} aria-label="close">
-                <CloseIcon />
-              </IconButton>
-            </Toolbar>
+            <img src="/asset/X_icon_mobile.svg" alt="" aria-hidden="true" />
+          </button>
+          <div className={s.mobileMenuLinks}>
             {pages.map((page, index) => (
               <Link
                 href={page.link}
@@ -136,9 +135,9 @@ const Navbar: React.FC = () => {
                 {page.name}
               </Link>
             ))}
-          </Dialog>
-        </ThemeProvider>
-      </nav>
+          </div>
+        </Dialog>
+      </>
     );
   }
 };

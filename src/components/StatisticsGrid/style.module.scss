@@ -1,63 +1,31 @@
 @use 'src/styles/vars.scss' as vars;
 
 .container {
-  color: #f0f0f0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 50vw;
 
-  .item {
-    border-left: 8px solid #f0f0f0;
-    padding-left: 25px;
-    padding-top: 15px;
+  .pill {
+    border: 2px solid #6f9ceb;
+    border-radius: 999px;
+    padding: 0.75rem 1.75rem;
+    color: vars.$white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
     text-shadow: 0 1.5px 1.5px vars.$black;
-    width: 210px;
-    > h1 {
-      font-size: 70px;
-      font-family: "Rubik", sans-serif;
-      text-transform: capitalize;
-      line-height: 50px;
-    }
-
-    > h3 {
-      font-size: 23px;
-      font-family: "Rubik", sans-serif;
-      text-transform: capitalize;
-      margin-bottom: 19px;
-    }
+    background: rgba(20, 20, 30, 0.25);
   }
-  @media only screen and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
 
-    .item {
-      border-left: 5px solid #f0f0f0;
-      padding: 5px 0 0 15px;
-      > h1 {
-        font-size: 50px;
-        margin: 0;
-      }
-
-      > h3 {
-        margin-top: 10px;
-        font-size: 20px;
-      }
-    }
-  }
   @media only screen and (max-width: 768px) {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    .item {
-      width: 170px;
-    }
-  }
-  @media only screen and (max-width: 425px) {
-    margin: 0;
-    .item {
-      width: 140px;
-      > h1 {
-        font-size: 45px;
-      }
+    max-width: 90vw;
+    gap: 0.2rem;
+
+    .pill {
+      padding: 0.5rem 0.7rem;
+      font-size: 1.3rem;
+      border: 1px solid #6f9ceb;
     }
   }
 }
