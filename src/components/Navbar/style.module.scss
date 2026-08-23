@@ -1,15 +1,122 @@
+// variables for dynamic navbar
+$nav-wrapper-pad-x: 1.5rem;
+$cap-h: 150px;
+$cap-w: calc(#{$cap-h} * 504 / 116);
+$mid-min-w: calc(#{$cap-h} * 392 / 116);
+$nav-min-w: calc(#{$cap-w} * 2 + #{$mid-min-w});
+$nav-stretch-start: 1920px;
+$nav-stretch-offset: calc(#{$nav-stretch-start} - #{$nav-wrapper-pad-x} * 2 - #{$nav-min-w});
+$cap-border-w: calc(#{$cap-h} * 3 / 116);
+
 .ship {
-  margin: 0.75rem;
+  margin: 0;
+  padding-top: 0.125rem;
+  width: 8rem;
+  height: auto;
+}
+
+.topVignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  pointer-events: none;
+  z-index: 999;
+}
+
+.navWrapper {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+}
+
+.navBar {
+  display: flex;
+  align-items: stretch;
+  flex: 0 1 auto;
+  width: max(#{$nav-min-w}, calc(100% - #{$nav-stretch-offset}));
+  transform-origin: top center;
+}
+
+.navCap {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  width: $cap-w;
+  height: $cap-h;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  font-family: 'Rubik', sans-serif;
+}
+
+.navCapLeft {
+  padding-left: 1.2rem;
+  background-image: url('/asset/navbar/nav_left.svg');
+}
+
+.navCapRight {
+  padding-right: 1.2rem;
+  justify-content: flex-end;
+  background-image: url('/asset/navbar/nav_right.svg');
+}
+
+.registerBtn {
+  display: inline-block;
+  background: #151411;
+  border: $cap-border-w solid #6899e5;
+  border-radius: 8px;
+  padding: 1.3rem 2.3rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.025rem;
+  font-weight: 500;
+}
+
+.navMiddle {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: $mid-min-w;
+  height: $cap-h;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navMiddleBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .navItem {
-  color: white;
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  margin-right: 1rem;
+  padding: 3.8rem 1rem 1rem;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 .navItem:hover {
@@ -21,13 +128,89 @@
   font-weight: bolder;
 }
 
-@media only screen and (max-width: 768px) {
-  .shipDialog {
-    margin: 0.75rem;
-  }
+.mobileNavWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.7rem;
+  z-index: 1000;
+}
 
+.mobileMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    width: 5rem;
+    height: auto;
+  }
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 4rem;
+    height: auto;
+    margin-right: 0.5rem;
+  }
+}
+
+.mobileMenuBackdrop {
+  background-image: url('/asset/bg_stars.svg');
+  background-repeat: repeat;
+  background-size: 1440px 1058px;
+}
+
+.mobileMenuPaper {
+  position: relative;
+  width: 90vw;
+  margin: 0;
+  border: 2px solid #6899e5;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(99, 148, 224, 0) 40%, #6394e0 150%);
+  padding: 3.5rem 1.5rem 2rem;
+  height: 100vh;
+}
+
+.mobileMenuClose {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  img {
+    width: 4.5rem;
+    height: auto;
+  }
+}
+
+.mobileMenuLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
   .navItem {
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    margin: 2rem 0;
   }
 }

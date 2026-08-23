@@ -11,13 +11,13 @@ import 'src/styles/Home.module.scss';
 
 const Home: NextPage = () => {
   return (
-    <main>
+    <main style={{ position: "relative" }}>
       <SEO />
       <StarCanvas />
       <Navbar />
       <Hero />
       <About />
-      <FAQ />
+      {/*<FAQ />*/}
       {/*<Companies />*/}
     </main>
   );
