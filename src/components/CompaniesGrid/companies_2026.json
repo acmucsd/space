@@ -3,6 +3,32 @@
     "name": "LPL Financial",
     "logo": "asset/lpl-logo.svg",
     "link": "https://www.lpl.com/",
-    "alt": "LPL Financial Company Sponsor Logo"
+    "alt": "LPL Financial Company Sponsor Logo",
+    "description": "Short description of sponsor",
+    "sponsoredYear": "2026"
+  },
+  {
+    "name": "Atlassian",
+    "logo": "",
+    "link": "#",
+    "alt": "Placeholder",
+    "description": "Short description of sponsor",
+    "sponsoredYear": "2026"
+  },
+  {
+    "name": "Company Three",
+    "logo": "",
+    "link": "#",
+    "alt": "Placeholder",
+    "description": "Short description of sponsor",
+    "sponsoredYear": "2026"
+  },
+  {
+    "name": "Company Four",
+    "logo": "",
+    "link": "#",
+    "alt": "Placeholder",
+    "description": "Short description of sponsor",
+    "sponsoredYear": "2026"
   }
 ]

@@ -1,49 +1,121 @@
 @use 'src/styles/vars.scss' as vars;
 
 .container {
-  display: grid;
+  display: flex;
   max-width: 1440px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   margin-top: 4rem;
-  row-gap: 1.7rem;
-  column-gap: 1.25rem;
+  padding: 0 2rem;
+  gap: 41px;
+}
 
-  .companyItem {
-    background: vars.$grey;
-    border-radius: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 2rem 0.75rem 2rem;
-    text-decoration: none;
-    transition: 0.5s ease-in-out;
+.companyCard {
+  border-radius: 23px;
+  background: linear-gradient(180deg, transparent 30%, rgba(104, 153, 229, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 30px 30px 30px 30px;
+  height: 485px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 3px #6394E0;
+  transition: flex 0.3s ease-in-out;
+  position: relative;
+}
 
-    &:hover {
-      transform: scale(1.03);
-    }
-    > .companyName {
-      margin: 0;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.12rem;
-      line-height: 1.2rem;
-      color: #120e46;
-    }
+.expanded {
+  flex: 2;
+}
 
-    .companyLogo {
-      object-fit: contain;
-      width: 80%;
-      height: 6rem;
-      overflow: hidden;
-    }
+.collapsed {
+  flex: 1;
+}
+
+.visitButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 115px;
+  height: 46px;
+  justify-content: center;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #E5A7DD 0%, #7FA5EF 100%);
+  padding: 8px 6px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: vars.$black;
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+
+  .visitArrow {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
+}
 
-  @media only screen and (max-width: 425px) {
-    .companyItem {
-      width: 80vw;
-    }
-    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
-  }
+.visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fadeHidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.companyInfo {
+  position: absolute;
+  bottom: 55px;
+  left: 30px;
+  right: 30px;
+}
+
+.sponsorTag {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  display: inline-block;
+  background: vars.$white;
+  color: vars.$black;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.companyName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
+  color: vars.$white;
+}
+
+.companyDescription {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  font-size: 14px;
+  color: vars.$white;
+  font-weight: 600;
 }
