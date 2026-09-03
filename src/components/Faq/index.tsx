@@ -3,7 +3,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Remove';
 import s from "./style.module.scss";
 
 interface panelData {
@@ -19,28 +20,26 @@ const Faq: React.FC<panelData> = ({ data }) => {
     };
 
   return (
-    <>
+    <div className={s.accordionGroup}>
         {data.map((questionObject, index) => 
-            <Accordion expanded= {expandedIndex === index} onChange= {handleChange(index)} sx = {{ 
-              borderTop: index === 0 ? 3 : 0,
-              borderBottom: 3,
-              bgcolor: 'transparent',
-              color: 'white',
-              boxShadow: 'none',
-            }} key = {questionObject.question}>
-              <AccordionSummary expandIcon={<ExpandMoreIcon className = {s.header}/>}>
-                <Typography sx = {{ fontSize: 20 }}>
+            <Accordion expanded= {expandedIndex === index} onChange= {handleChange(index)} className={s.accordion} key={questionObject.question}>
+              <AccordionSummary className={s.header}
+                expandIcon={
+                  expandedIndex === index ? <CloseIcon className={s.expandIcon} /> : <ExpandIcon className={s.expandIcon} />
+                }
+              >
+                <Typography className={s.question}>
                   {questionObject.question}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className = {s.description}>
-                <Typography component="div" sx = {{ fontSize: 20 }}>
-                  <div>{questionObject.answer}</div>
+                <Typography component="div" className={s.answer}>
+                  {questionObject.answer}
                 </Typography>
               </AccordionDetails>
             </Accordion>
         )}
-  </>
+  </div>
   )
 }
 

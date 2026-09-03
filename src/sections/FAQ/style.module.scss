@@ -1,26 +1,16 @@
 @use 'src/styles/vars.scss' as vars;
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-.background {
-  background-image: linear-gradient(180deg, vars.$blue 15%, vars.$pink 100%);
-  min-height: 100vh;
-  font-family: Rubik, sans-serif;
-}
-
 .faqContainer {
-  max-width: 1440px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
-  width: 65%;
-  padding-top: 10px;
-  padding-bottom: 50px;
+  padding: 2.5rem 5.5rem 4.5rem;
 
   .faqTitle {
-    font-size: 65px;
-  }
-
-  .faqBox {
-    margin-top: 20px;
-    max-width: 900px;
+    margin-bottom: 2.13rem;
+    font-size: 3.375rem;
+    font-weight: 500;
   }
 }
