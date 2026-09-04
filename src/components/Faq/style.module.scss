@@ -32,7 +32,7 @@ $border-rad: 1.4375rem;
     }
     
     .description {
-      margin-top: 4rem;
+      margin-top: 3rem;
       border-radius: $border-rad;
       padding: 1.25rem;
       background-color: #6394E080;
@@ -46,6 +46,18 @@ $border-rad: 1.4375rem;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: normal;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .header {
+        .question {
+          font-size: 1.5rem;
+        }
+      }
+
+      .description {
+        margin-top: 1rem;
       }
     }
   }

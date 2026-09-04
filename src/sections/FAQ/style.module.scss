@@ -32,5 +32,33 @@
       top: 5.4rem;
       right: 9.1rem;
     }
+
+    @media screen and (max-width: 1140px) {
+      .raccoon {
+        right: 5rem;
+      }
+
+      .raccoonHands {
+        right: 6.1rem;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .raccoon {
+        display: none;
+      }
+
+      .raccoonHands {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-inline: 2.2rem;
+
+    .title {
+      display: none;
+    }
   }
 }
