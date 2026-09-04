@@ -1,16 +1,36 @@
 @use 'src/styles/vars.scss' as vars;
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-.faqContainer {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  padding: 2.5rem 5.5rem 4.5rem;
+  justify-content: center;
+  padding: 7rem 5.5rem 4.5rem;
 
-  .faqTitle {
-    margin-bottom: 2.13rem;
-    font-size: 3.375rem;
-    font-weight: 500;
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    color: vars.$white;
+
+    .title {
+      margin-bottom: 2.13rem;
+      font-size: 3.375rem;
+      font-weight: 500;
+    }
+
+    .raccoon {
+      position: absolute;
+      top: 0.8rem;
+      right: 8rem;
+    }
+
+    .raccoonHands {
+      position: absolute;
+      z-index: 10;
+      top: 5.4rem;
+      right: 9.1rem;
+    }
   }
 }
