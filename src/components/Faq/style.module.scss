@@ -18,17 +18,29 @@ $border-rad: 1.4375rem;
     .header{
       padding: 0;
 
+      &:hover {
+        .question {
+          transform: scale(1.02);
+        }
+
+        .expandIcon {
+          transform: scale(1.15);
+        }
+      }
+
       .question {
         font-family: Rubik, sans-serif;
         font-size: 2rem;
         font-weight: 500;
         line-height: normal;
+        transition: transform 0.2s;
       }
     }
 
     .expandIcon {
       color: vars.$white;
       font-size: 3rem;
+      transition: transform 0.2s;
     }
     
     .description {
