@@ -81,11 +81,60 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+.logoWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+.logoWrapperExpanded {
+  top: 86px;
+  bottom: 135px;
+}
+
+.logoWrapperCollapsed {
+  top: 30px;
+  bottom: 100px;
+}
+
+.companyLogo {
+  object-fit: contain;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.logoExpanded {
+  width: 200px;
+  height: 200px;
+}
+
+.logoCollapsed {
+  width: 120px;
+  height: 120px;
+}
+
 .companyInfo {
   position: absolute;
   bottom: 55px;
   left: 30px;
   right: 30px;
+}
+
+.companyName {
+  width: fit-content;
+  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
+  color: vars.$white;
+}
+
+.companyNameCollapsed {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sponsorTag {
@@ -103,13 +152,6 @@
   width: auto;
 }
 
-.companyName {
-  margin: 0;
-  font-weight: 600;
-  font-size: 32px;
-  color: vars.$white;
-}
-
 .companyDescription {
   position: absolute;
   top: 100%;
@@ -118,4 +160,55 @@
   font-size: 14px;
   color: vars.$white;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .companyCard {
+    flex: none;
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .companyInfo {
+    left: 20px;
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .logoWrapper {
+    top: 90px;
+    bottom: 110px;
+  }
+
+  .companyLogo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .companyName {
+    font-size: 24px;
+  }
+
+  .sponsorTag {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .companyDescription {
+    font-size: 12px;
+  }
+
+  .visitButton {
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+  }
 }
