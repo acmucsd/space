@@ -1,9 +1,10 @@
 @use 'src/styles/vars.scss' as vars;
 
 .container {
-  background: linear-gradient(180deg, vars.$pink 30%, vars.$blue 160%);
+  background: vars.$blue;
   min-height: 100vh;
-  padding: 2.5rem;
+  padding: 2.5rem 2.5rem 12rem;
+  position: relative;
 
   > h1 {
     font-style: normal;
@@ -14,5 +15,48 @@
     text-shadow: 0 1.5px 1.5px vars.$black;
     max-width: 1440px;
     margin: 0 auto;
+  }
+
+  .raccoon {
+    position: absolute;
+    right: 3%;
+    bottom: 18%;
+    width: 200px;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .sponsorButton {
+    display: block;
+    width: fit-content;
+    margin: 3.5rem auto 0;
+    padding: 12px 32px;
+    font-size: 24px;
+    font-weight: 600;
+    color: vars.$white;
+    text-decoration: none;
+    border: 2px solid #6394E0;
+    border-radius: 0;
+    box-shadow: 0 0 10px #6394E0;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .raccoon {
+      bottom: 4%;
+      right: 10%;
+      width: 140px;
+    }
+
+    .sponsorButton {
+      font-size: 16px;
+      padding: 10px 24px;
+    }
   }
 }
