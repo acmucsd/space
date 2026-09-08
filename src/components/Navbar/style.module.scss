@@ -21,7 +21,7 @@ $cap-border-w: calc(#{$cap-h} * 3 / 116);
   left: 0;
   right: 0;
   height: 180px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 70%, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
   pointer-events: none;
   z-index: 999;
 }
@@ -208,6 +208,11 @@ $cap-border-w: calc(#{$cap-h} * 3 / 116);
 }
 
 @media only screen and (max-width: 768px) {
+  .topVignette {
+    height: 120px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  }
+
   .navItem {
     font-size: 1.25rem;
     padding: 0.5rem 0;
