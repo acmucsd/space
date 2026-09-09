@@ -1,46 +1,167 @@
 @use 'src/styles/vars.scss' as vars;
 
 .heroContainer {
-  background-image: linear-gradient(180deg, vars.$blue 15%, vars.$pink 98%);
-  min-height: 100vh;
+  position: relative;
+  min-height: calc(100vh + 17vw);
   font-family: Rubik, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: auto;
 
-  .heroTitle {
-    position: absolute;
-    width: 100%;
-    top: 15%;
+  @media only screen and (max-width: 768px) {
+    min-height: 260vw;
+  }
+
+  .heroContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 18vh;
     z-index: 1;
+
+    @media only screen and (max-width: 768px) {
+      padding-top: 50vw;
+    }
   }
 
-  @keyframes float {
-    from {
-      transform: translateY(-30px);
+  .heroTitleWrapper {
+    position: relative;
+    width: min(75%, 1500px);
+    z-index: 1;
+
+    .heroTitleLetters {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    to {
-      transform: translateY(20px);
+
+    .heroStarA {
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      width: 47.5%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .heroContrail {
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      width: 60vw;
+      max-width: 1600px;
+      transform: translate(-100%, -100%);
+      z-index: -1;
+      pointer-events: none;
+
+      @media only screen and (max-width: 768px) {
+        top: 44%
+      }
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(-30px);
+      }
+      to {
+        transform: translateY(20px);
+      }
+    }
+
+    // for desktop only
+    .heroRaccoon {
+      position: absolute;
+      top: 38%;
+      left: -12%;
+      width: 40%;
+      transform: translate(0%, 0%);
+      z-index: 2;
+      pointer-events: none;
+      animation: 3s float alternate-reverse infinite;
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin: 0 0;
+      width: 100%;
+
+      .heroTitleLetters {
+        margin-bottom: 0;
+      }
     }
   }
-  .heroPlanet {
-    max-width: 60vh;
-    max-height: 60vh;
+
+  // for mobile only
+  .heroRaccoonMobile {
+    display: none;
+    pointer-events: none;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+      position: relative;
+      width: 60%;
+      margin-top: 0;
+      right: 17%;
+      animation: 3s float alternate-reverse infinite;
+    }
+  }
+
+  .heroCloud {
+    max-width: 140vh;
+    max-height: 140vh;
+    width: 70%;
     position: absolute;
-    top: 60%;
-    right: 0;
+    top: 40vh;
+    right: -25vmax;
     z-index: 0;
-    animation: 3s float alternate-reverse infinite;
+    opacity: 0.9;
+    pointer-events: none;
+
+    @media only screen and (max-width: 768px) {
+      position: absolute;
+      top: 40%;
+      left: 35%;
+      width: 100vw;
+    }
+  }
+
+  .heroCloudTopMobile,
+  .heroCloudBottomMobile {
+    display: none;
+    pointer-events: none;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+      position: absolute;
+      width: 100vw;
+      opacity: 0.9;
+      z-index: 0;
+    }
+  }
+
+  .heroCloudTopMobile {
+    @media only screen and (max-width: 768px) {
+      top: -15%;
+      left: 30%;
+    }
+  }
+
+  .heroCloudBottomMobile {
+    @media only screen and (max-width: 768px) {
+      bottom: 5%;
+      right: 40%;
+    }
   }
 
   .heroDescription {
-    display: flex;
+    position: relative;
     text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    height: 100vh;
     width: 100%;
-    margin-top: 14vw;
+    margin-top: 1rem;
     padding: 0 2rem;
-    z-index: 2;
     text-shadow: 0 1.5px 1.5px vars.$black;
 
     .heroInfo {
@@ -59,38 +180,55 @@
 
     .heroSubtitle {
       line-height: 100%;
-      margin-top: max(2rem, 2vw);
       color: vars.$white;
-      font-size: 40px;
+      font-size: 48px;
       font-weight: bolder;
+      margin-bottom: 0.7rem;
     }
 
     .heroInfo {
       color: vars.$white;
-      font-size: 20px;
+      font-size: 32px;
+      line-height: 100%;
     }
-  }
-  .registerButton {
-    text-decoration: none;
-    padding: 10px 32px;
-    color: white;
-    font-weight: bolder;
-    background: vars.$blue;
-    border: 3px solid;
-    border-color: vars.$blue;
-    border-radius: 9.86667px;
-    display: inline-block;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    font-size: 1.5rem;
-    transition: 0.3s ease;
 
-    &:hover {
-      background: #c78f8f;
-      box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.31);
-      border-color: #c78f8f;
-      cursor: pointer;
+    .heroRegisterMobile {
+      display: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 0;
+
+      .heroSubtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .heroInfo {
+        font-size: 0.9rem;
+        line-height: 100%;
+        font-weight: 400;
+      }
+
+      .heroRegisterMobile {
+        display: inline-block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 1.6rem;
+        background: #151411;
+        border: 1px solid #6899e5;
+        border-radius: 4px;
+        padding: 0.4rem 1.4rem;
+        color: vars.$white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.025rem;
+        text-shadow: none;
+        box-shadow: 0 0 8px rgba(104, 153, 229, 0.5), 0 0 20px rgba(104, 153, 229, 0.5);
+      }
     }
   }
 }

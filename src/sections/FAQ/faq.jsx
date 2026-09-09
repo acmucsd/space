@@ -3,10 +3,10 @@ const data = {
     {
       question: "How do I attend the career fair?",
       answer: (
-        <p>
+        <>
           You can register to attend SPACE <a href="https://acmurl.com/space-registration">here</a>.
           We will be sending out more information as soon as we can confirm your attendance!
-        </p>
+        </>
       ),
     },
     {
@@ -29,12 +29,8 @@ const data = {
     },
     {
       question: "Should I bring my resume?",
-      answer: (
-        <p>
-          Feel free to bring your resume! We will also be sharing resumes with companies after the
-          event so make sure to upload your resume on the registration form.
-        </p>
-      ),
+      answer:
+        "Feel free to bring your resume! We will also be sharing resumes with companies after the event so make sure to upload your resume on the registration form.",
     },
   ],
 };
