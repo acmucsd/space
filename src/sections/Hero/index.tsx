@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
             <div>
               <a
                 className={s.heroLink}
-                href="https://maps.app.goo.gl/yfNcvtfj4PoDBE1a7"
+                href="https://maps.app.goo.gl/zARUAVJ39ZiLw5Kh7"
                 target="_blank"
                 rel="noopener noreferrer"
               >
