@@ -4,5 +4,11 @@
     "logo": "asset/lpl-logo.svg",
     "link": "https://www.lpl.com/",
     "alt": "LPL Financial Company Sponsor Logo"
+  }, 
+  {
+    "name": "Atlassian",
+    "logo": "asset/atlassian-logo.svg",
+    "link": "https://www.atlassian.com/",
+    "alt": "Atlassian Company Sponsor Logo"
   }
 ]

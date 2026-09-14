@@ -1,0 +1,49 @@
+@use 'src/styles/vars.scss' as vars;
+
+.container {
+  display: grid;
+  max-width: 1440px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin-top: 4rem;
+  row-gap: 1.7rem;
+  column-gap: 1.25rem;
+
+  .companyItem {
+    background: vars.$grey;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 0.75rem 2rem;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+    > .companyName {
+      margin: 0;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.12rem;
+      line-height: 1.2rem;
+      color: #120e46;
+    }
+
+    .companyLogo {
+      object-fit: contain;
+      width: 80%;
+      height: 6rem;
+      overflow: hidden;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .companyItem {
+      width: 80vw;
+    }
+    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
+  }
+}
