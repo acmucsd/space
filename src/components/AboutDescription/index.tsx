@@ -17,9 +17,10 @@ const AboutDescription: React.FC = () => {
       />
       <div className={s.descriptionBlock}>
         <span>
-          Through SPACE, students and recruiters can connect and interact with each other regarding
-          professional opportunities such as internships, full or part-time positions, and student
-          programs.
+          Through SPACE, students and recruiters can connect and interact with each other regarding professional opportunities such as internships, full or part-time positions, and student programs. 
+          <br />
+          <br />
+          This year, SPACE will also feature a <span className={s.bold}>resume & LinkedIn review station</span> and a <span className={s.bold}>professional headshot station</span>, giving students even more ways to prepare for and make the most of their opportunities.
         </span>
         <img src="asset/about-star.png" className={s.img} alt="About Star Image" />
       </div>

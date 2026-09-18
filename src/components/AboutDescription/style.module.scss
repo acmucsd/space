@@ -25,9 +25,13 @@
       font-weight: 400;
       font-family: 'Lato', sans-serif;
       font-size: 33px;
+      white-space: pre-line;
       line-height: 40px;
       color: #ffffff;
       margin-top: 20px;
+      > .bold {
+        font-weight: 1000;
+      }
     }
 
     .img {
