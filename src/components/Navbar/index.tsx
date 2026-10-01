@@ -9,10 +9,6 @@ const pages = [
     link: '/#about',
   },
   {
-    name: 'Registration',
-    link: 'https://acmurl.com/space-registration',
-  },
-  {
     name: 'FAQ',
     link: '/#faq',
   },
