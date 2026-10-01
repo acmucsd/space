@@ -1,7 +1,6 @@
 import CompaniesGrid from 'src/components/CompaniesGrid';
 import SupportingSponsorsGrid from 'src/components/SupportingSponsorsGrid';
 import s from './style.module.scss';
-import { Support } from '@mui/icons-material';
 
 const Companies: React.FC = () => {
   return (
@@ -10,6 +9,9 @@ const Companies: React.FC = () => {
       <CompaniesGrid />
       <h1>Supporting Sponsors</h1>
       <SupportingSponsorsGrid />
+      <a className={s.sponsorButton} href="https://acmurl.com/space-company-registration">
+        Become a Sponsor
+      </a>
     </section>
   );
 };

@@ -9,9 +9,8 @@ const StatisticsGrid: React.FC = () => {
   return (
     <div className={s.container}>
       {statistics.map((stat, index) => (
-        <div className={s.item} key={index}>
-          <h1>{stat.value}</h1>
-          <h3>{stat.label}</h3>
+        <div className={s.pill} key={index}>
+          {stat.value} {stat.label}
         </div>
       ))}
     </div>
