@@ -18,8 +18,10 @@ const AboutDescription: React.FC = () => {
         />
       </div>
       <p className={s.description}>
-        Through SPACE, students and recruiters can connect and interact with each other regarding
-        professional opportunities such as internships, full or part-time positions, and student programs.
+      Through SPACE, students and recruiters can connect and interact with each other regarding professional opportunities such as internships, full or part-time positions, and student programs.
+      <br />
+      <br />
+      This year, SPACE will also feature a resume review, professional headshot, and intern panel stations, giving students even more ways to prepare for and make the most of their opportunities. Sign up to reserve a time slot and share your resume with our sponsors!
       </p>
     </div>
   );
