@@ -1,71 +1,39 @@
 @use 'src/styles/vars.scss' as vars;
 
 .container {
-  color: #f0f0f0;
-  margin-top: 25px;
-  margin: 2rem;
+  color: vars.$white;
   text-shadow: 0 1.5px 1.5px vars.$black;
+  max-width: 620px;
+
+  .headerWrapper {
+    display: block;
+    margin-bottom: 1rem;
+  }
 
   .header {
     font-family: 'Rubik', sans-serif;
-    font-weight: 600;
-    font-size: 70px;
-    color: #dbc9ff;
-    line-height: 90px;
-    letter-spacing: 2px;
+    font-weight: bolder;
+    font-size: 54px;
+    color: vars.$white;
+    line-height: 1.1;
   }
 
-  .descriptionBlock {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: 80px;
-
-    > span {
-      font-weight: 400;
-      font-family: 'Lato', sans-serif;
-      font-size: 33px;
-      line-height: 40px;
-      color: #ffffff;
-      margin-top: 20px;
-    }
-
-    .img {
-      width: 400px;
-      margin-right: 120px;
-    }
+  .description {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 1.25;
+    color: vars.$white;
+    margin: 0;
   }
-  @media only screen and (max-width: 1024px) {
-    .header {
-      line-height: 60px;
-    }
-    .descriptionBlock {
-      > span {
-        font-size: 25px;
-        margin-top: 20px;
-      }
 
-      .img {
-        width: 300px;
-        margin-right: 0;
-      }
-    }
-  }
   @media only screen and (max-width: 768px) {
     .header {
-      font-size: 50px;
+      font-size: 36px;
     }
-    .descriptionBlock {
-      flex-direction: column;
-      row-gap: 25px;
-      justify-content: center;
-
-      .img {
-        margin-top: 20px;
-      }
+    .description {
+      font-size: 5vw;
+      max-width: 70%;
     }
-  }
-  @media only screen and (max-width: 425px) {
-    margin: 2rem 0;
   }
 }

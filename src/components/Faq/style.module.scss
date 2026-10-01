@@ -1,21 +1,86 @@
 @use "src/styles/vars.scss" as vars;
 
-.header{
-  background-color: transparent;
-  color: vars.$white;
-  font-family: Rubik, sans-serif;
-  font-size: 1.25rem;
-  font-weight: bolder;
-  border-color: none;
-  box-shadow: none;
-}
-.description{
-  color: vars.$white;
-  font-family: Rubik, sans-serif;
-  font-size: 1rem;
-  font-weight: bolder;
-  
-  a, a:visited, a:hover{
-    color: white;
+$border-rad: 1.4375rem;
+
+.accordionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2.56rem;
+
+  .accordion {
+    margin: 0;
+    border: 3px solid #6899E5;
+    border-radius: $border-rad;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, #00000000 36.6%, #6394E080 90.93%);
+    color: vars.$white;
+
+    .header{
+      padding: 0;
+
+      &:hover {
+        .question {
+          transform: scale(1.02);
+        }
+
+        .expandIcon {
+          transform: scale(1.15);
+        }
+      }
+
+      .question {
+        font-family: Rubik, sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: normal;
+        transition: transform 0.2s;
+      }
+    }
+
+    .expandIcon {
+      color: vars.$white;
+      font-size: 3rem;
+      transition: transform 0.2s;
+    }
+    
+    .description {
+      margin-top: 3rem;
+      border-radius: $border-rad;
+      padding: 1.25rem;
+      background-color: #6394E080;
+
+      a, a:visited, a:hover{
+        color: vars.$white;
+      }
+
+      .answer {
+        font-family: Rubik, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: normal;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .header {
+        .question {
+          font-size: 1.5rem;
+        }
+      }
+
+      .description {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .accordion:first-of-type {
+    border-top-left-radius: $border-rad;
+    border-top-right-radius: $border-rad;
+  }
+
+  .accordion:last-of-type {
+    border-bottom-left-radius: $border-rad;
+    border-bottom-right-radius: $border-rad;
   }
 }
