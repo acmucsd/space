@@ -79,7 +79,6 @@ const Navbar: React.FC = () => {
                 <Link
                   href={page.link}
                   className={s.navItem}
-                  target={page.externalLink ? '_blank' : undefined}
                   key={index}
                 >
                   {page.name}
@@ -88,7 +87,6 @@ const Navbar: React.FC = () => {
             </div>
             <Link
               href="https://acmurl.com/space-registration"
-              target="_blank"
               className={`${s.navCap} ${s.navCapRight}`}
             >
               <span className={s.registerBtn}>Register Today!</span>
@@ -128,7 +126,6 @@ const Navbar: React.FC = () => {
               <Link
                 href={page.link}
                 className={s.navItem}
-                target={page.externalLink ? '_blank' : undefined}
                 key={index}
                 onClick={handleMobileClose}
               >
