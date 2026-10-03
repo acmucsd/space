@@ -42,9 +42,6 @@
   }
 
   @media only screen and (max-width: 425px) {
-    .companyItem {
-      width: 80vw;
-    }
     grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
   }
 }
