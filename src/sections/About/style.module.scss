@@ -33,14 +33,14 @@
     pointer-events: none;
   }
 
-  // .planet {
-  //   position: relative;
-  //   top: 20%;
-  //   left: 6%;
-  //   width: 16vw;
-  //   max-width: 290px;
-  //   pointer-events: none;
-  // }
+  .planet {
+    position: relative;
+    top: 20%;
+    left: 6%;
+    width: 16vw;
+    max-width: 290px;
+    pointer-events: none;
+  }
 
   .descriptionRow {
     display: flex;
@@ -62,11 +62,12 @@
       min-height: 100vw;
     }
 
-    // .planet {
-    //   top: 0;
-    //   width: 50%;
-    //   margin-bottom: 10vw;
-    // }
+    .planet {
+      display: none;
+      top: 0;
+      width: 50%;
+      margin-bottom: 10vw;
+    }
 
     .descriptionRow {
       flex-direction: column;
