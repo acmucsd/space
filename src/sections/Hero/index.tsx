@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
 
         <img src="/asset/cloud_variant1.svg" alt="" aria-hidden="true" className={s.heroCloud} />
         <img src="/asset/cloud_variant2.svg" alt="" aria-hidden="true" className={s.heroCloudTopMobile} />
-        <img src="/asset/cloud_variant2.svg" alt="" aria-hidden="true" className={s.heroCloudBottomMobile} />
+        {/* <img src="/asset/cloud_variant2.svg" alt="" aria-hidden="true" className={s.heroCloudBottomMobile} /> */}
       </div>
     </>
   );

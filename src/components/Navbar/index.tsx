@@ -15,7 +15,11 @@ const pages = [
   {
     name: 'Companies',
     link: '/#companies',
-    externalLink: true,
+  },
+  {
+    name: 'Registration',
+    link: 'https://acmurl.com/space-registration',
+    mobile: true,
   },
 ];
 
@@ -71,7 +75,7 @@ const Navbar: React.FC = () => {
             </Link>
             <div className={s.navMiddle}>
               <img src="/asset/navbar/nav_mid.svg" className={s.navMiddleBg} alt="" aria-hidden="true" />
-              {pages.map((page, index) => (
+              {pages.map((page, index) => page.mobile ||
                 <Link
                   href={page.link}
                   className={s.navItem}
@@ -79,7 +83,7 @@ const Navbar: React.FC = () => {
                 >
                   {page.name}
                 </Link>
-              ))}
+              )}
             </div>
             <Link
               href="https://acmurl.com/space-registration"
@@ -106,7 +110,13 @@ const Navbar: React.FC = () => {
         <Dialog
           open={mobileOpen}
           onClose={handleMobileClose}
-          PaperProps={{ className: s.mobileMenuPaper }}
+          PaperProps={{
+            className: s.mobileMenuPaper,
+            sx: {
+              backgroundColor: 'transparent',
+              backgroundImage: 'linear-gradient(180deg, #00000000 40%, #6394e0 150%)',
+            },
+          }}
           componentsProps={{ backdrop: { className: s.mobileMenuBackdrop } }}
         >
           <button

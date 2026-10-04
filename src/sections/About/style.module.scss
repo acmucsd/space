@@ -2,13 +2,11 @@
 
 .container {
   position: relative;
-  min-height: 140vh;
-  padding: 0px 40px 40px;
+  padding: 80px 40px 40px;
   overscroll-behavior: auto;
 
   @media only screen and (max-width: 768px) {
-    min-height: 120vh;
-    padding-top: 20vw;
+    padding-top: 0;
   }
 
   .content {
@@ -45,8 +43,9 @@
   }
 
   .descriptionRow {
-    position: relative;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     > div:first-child {
       max-width: 50%;
@@ -54,12 +53,7 @@
   }
 
   .raccoon {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
     max-width: 40vw;
-    height: auto;
     pointer-events: none;
   }
 
@@ -69,10 +63,14 @@
     }
 
     .planet {
+      display: none;
       top: 0;
-      left: 50%;
       width: 50%;
       margin-bottom: 10vw;
+    }
+
+    .descriptionRow {
+      flex-direction: column;
     }
 
     .descriptionRow > div:first-child {
@@ -80,8 +78,6 @@
     }
 
     .raccoon {
-      top: 100%;
-      right: 0;
       transform: translateY(10%);
       max-width: 60vw;
     }
