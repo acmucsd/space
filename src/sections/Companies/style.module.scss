@@ -1,8 +1,7 @@
 @use 'src/styles/vars.scss' as vars;
 
 .container {
-  min-height: 100vh;
-  padding: 2.5rem;
+  padding: 5rem 2.5rem;
 
   > h1 {
     font-style: normal;
@@ -18,7 +17,7 @@
   .sponsorButton {
     display: block;
     width: fit-content;
-    margin: 2.5rem auto 1rem;
+    margin: 2.5rem auto 0;
     background: #151411;
     border: 1px solid #6899e5;
     border-radius: 8px;

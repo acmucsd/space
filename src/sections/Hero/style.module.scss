@@ -2,14 +2,9 @@
 
 .heroContainer {
   position: relative;
-  min-height: calc(100vh + 17vw);
   font-family: Rubik, sans-serif;
-  overflow: hidden;
+  overflow-x: clip;
   overscroll-behavior: auto;
-
-  @media only screen and (max-width: 768px) {
-    min-height: 260vw;
-  }
 
   .heroContent {
     position: relative;
@@ -114,7 +109,7 @@
     max-height: 140vh;
     width: 70%;
     position: absolute;
-    top: 40vh;
+    top: 60vh;
     right: -25vmax;
     z-index: 0;
     opacity: 0.9;
@@ -122,39 +117,33 @@
 
     @media only screen and (max-width: 768px) {
       position: absolute;
-      top: 40%;
+      top: 60%;
       left: 35%;
       width: 100vw;
     }
   }
 
-  .heroCloudTopMobile,
-  .heroCloudBottomMobile {
+  .heroCloudTopMobile {
     display: none;
     pointer-events: none;
 
     @media only screen and (max-width: 768px) {
       display: block;
       position: absolute;
+      top: -23%;
+      left: 30%;
       width: 100vw;
       opacity: 0.9;
       z-index: 0;
     }
   }
 
-  .heroCloudTopMobile {
-    @media only screen and (max-width: 768px) {
-      top: -15%;
-      left: 30%;
-    }
-  }
-
-  .heroCloudBottomMobile {
-    @media only screen and (max-width: 768px) {
-      bottom: 5%;
-      right: 40%;
-    }
-  }
+  // .heroCloudBottomMobile {
+  //   @media only screen and (max-width: 768px) {
+  //     bottom: 5%;
+  //     right: 40%;
+  //   }
+  // }
 
   .heroDescription {
     position: relative;
