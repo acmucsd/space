@@ -5,7 +5,7 @@ const data = {
       answer: (
         <>
           You can register to attend SPACE <a href="https://acmurl.com/space-registration">here</a>.
-          Walk-ins are welcome, but we highly recommend registering to guarantee your spot before we reach capacity! We'll send out more information once your attendance is confirmed.
+          Walk-ins are welcome, but we highly recommend registering to guarantee your spot before we reach capacity! We&apos;ll send out more information once your attendance is confirmed.
         </>
       ),
     },
