@@ -110,7 +110,13 @@ const Navbar: React.FC = () => {
         <Dialog
           open={mobileOpen}
           onClose={handleMobileClose}
-          PaperProps={{ className: s.mobileMenuPaper }}
+          PaperProps={{
+            className: s.mobileMenuPaper,
+            sx: {
+              backgroundColor: 'transparent',
+              backgroundImage: 'linear-gradient(180deg, #00000000 40%, #6394e0 150%)',
+            },
+          }}
           componentsProps={{ backdrop: { className: s.mobileMenuBackdrop } }}
         >
           <button
