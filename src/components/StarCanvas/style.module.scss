@@ -1,4 +1,8 @@
-.particles {
-  position: fixed;
-  z-index: 10000;
+.starCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/asset/bg_stars.svg');
+  background-repeat: repeat;
+  background-size: 1440px 1058px;
 }

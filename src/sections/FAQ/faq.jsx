@@ -3,10 +3,10 @@ const data = {
     {
       question: "How do I attend the career fair?",
       answer: (
-        <p>
+        <>
           You can register to attend SPACE <a href="https://acmurl.com/space-registration">here</a>.
-          We will be sending out more information as soon as we can confirm your attendance!
-        </p>
+          Walk-ins are welcome, but we highly recommend registering to guarantee your spot before we reach capacity! We&apos;ll send out more information once your attendance is confirmed.
+        </>
       ),
     },
     {
@@ -20,21 +20,17 @@ const data = {
     },
     {
       question: "What is the dress code?",
-      answer: "There isn’t a strict dress code for the event. Keep it simple!",
+      answer: "There isn't a strict dress code, but we encourage business casual! It'll help you make a great first impression with recruiters, and you'll be ready for our professional headshot station.",
     },
     {
       question: "What kind of companies will be coming?",
       answer:
-        "Our lineup of companies will be announced soon on social media and updated here on this page!",
+        "Companies sending recruiters to meet students in person are listed under the Participating Companies section of our website. Other sponsors will provide swag and flyers about their current job opportunities.",
     },
     {
       question: "Should I bring my resume?",
-      answer: (
-        <p>
-          Feel free to bring your resume! We will also be sharing resumes with companies after the
-          event so make sure to upload your resume on the registration form.
-        </p>
-      ),
+      answer:
+        "Feel free to bring your resume! We will also be sharing resumes with companies after the event so make sure to upload your resume on the registration form.",
     },
   ],
 };
