@@ -115,6 +115,7 @@ const Navbar: React.FC = () => {
             sx: {
               backgroundColor: 'transparent',
               backgroundImage: 'linear-gradient(180deg, #00000000 40%, #6394e0 150%)',
+              borderRadius: '16px',
             },
           }}
           componentsProps={{ backdrop: { className: s.mobileMenuBackdrop } }}
